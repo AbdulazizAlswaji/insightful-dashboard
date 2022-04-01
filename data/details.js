@@ -18,7 +18,8 @@ details = {
     3: {
         label: 'Refund',
         icon: 'noun-refund-1106395-FFFFFF.svg',
-        unit: 'Thounsands SAR'
+        unit: 'Thounsands SAR',
+        desc: true
     },
 
     4: {
@@ -34,6 +35,7 @@ details = {
     6: {
         label: 'Resigned employee',
         icon: 'noun-exit-1472515-FFFFFF.svg',
+        desc: true
     },
 
 }
