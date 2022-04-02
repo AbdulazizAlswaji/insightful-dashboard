@@ -7,12 +7,14 @@ details = {
     1: {
         label: 'Sales',
         icon: 'noun-purchase-1433685-FFFFFF.svg',
-        unit: 'Millions SAR'
+        unit: 'Millions SAR',
+        desc: false
     },
 
     2: {
         label: 'New customers',
         icon: 'noun-add-user-81368-FFFFFF.svg',
+        desc: false
     },
 
     3: {
@@ -24,12 +26,14 @@ details = {
 
     4: {
         label: 'Employee',
-        icon: 'noun-employees-186484-FFFFFF.svg'
+        icon: 'noun-employees-186484-FFFFFF.svg',
+        desc: false
     },
 
     5: {
         label: 'New employee',
         icon: 'noun-user-162961-FFFFFF.svg',
+        desc: false
     },
 
     6: {
