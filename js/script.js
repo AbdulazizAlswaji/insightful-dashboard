@@ -3,6 +3,8 @@ $(document).ready(() => {
     view_values('#customers', data.values.customers, details);
     view_values('#employee', data.values.employee, details);
 
+    view_trend('#sales', data.trends.sales, details, 'sales');
+
 });
 
 
@@ -85,3 +87,59 @@ view_values = (_id, data, details) => {
     }
 }
 
+
+view_trend = (_id, data, details) => {
+    let label = details[data.details].label;
+    let unit = details[data.details].unit;
+    
+    
+    $(_id).html('');
+
+    var options = {
+        title: {
+            text: label ,
+            align: 'center'
+        },
+
+        series: [{
+            name: label,
+            data: data.values,
+        }],
+
+        chart: {
+            toolbar: { show: false },
+            height: 280,
+            type: 'area',
+            foreColor: '#fff',
+        },
+
+        colors: ['#db0f68'],
+
+        dataLabels: {
+            enabled: false
+        },
+
+        stroke: {
+            curve: 'smooth',
+            width: 2,
+        },
+
+        xaxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        
+        yaxis: [
+            {
+                title: {
+                    text: label,
+                },
+            }
+        ]
+
+    };
+
+    var chart = new ApexCharts(document.querySelector(_id), options);
+    chart.render();
+
+
+}
