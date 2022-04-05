@@ -1,9 +1,12 @@
 $(document).ready(() => {
 
+    particlesJS.load('particles-js', './animation/effects.json');
+
     view_values('#customers', data.values.customers, details);
     view_values('#employee', data.values.employee, details);
 
     view_trend('#sales', data.trends.sales, details, 'sales');
+    view_trend('#refund', data.trends.refund, details, 'refund');
 
 });
 
