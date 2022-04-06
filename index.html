@@ -27,11 +27,21 @@
 </head>
 
 <body class="mb-5">
-    <main class="container mt-5 mb-3">
+    <div class="mt-3">
+        <div>
+            <img src="icons/noun-dashboard-4731624-FFFFFF.svg" class="icon"/>
+        </div>
+        <div>
+            <span class="label">Insightful Dashboard</span>
+        </div>
+    </div>
+
+    <main class="container mt-2 mb-5 pb-5">
         <div id="particles-js" class="center" style="position: fixed; height: 100%; width:100%;"></div>
+
         <div class="container pt-2">
             <button type="button" class="btn btn-outline-info m-1 label" id="all">All</button>
-            <button type="button" class="btn btn-outline-info m-1 label" id="tabels">Tabels</button>
+            <button type="button" class="btn btn-outline-info m-1 label" id="tables">Tables</button>
             <button type="button" class="btn btn-outline-info m-1 label" id="trends">Trends</button>
         </div>
 
@@ -53,10 +63,12 @@
             <div class="container">
                 <div class="row">
                     <div class=" b mt-2 col-md-6">
+                        <img id="sales-img" class="icon"/>
                         <div id="sales" data-aos="fade-down"></div>
                     </div>
                     <div class=" b mt-2 col-md-6">
-                        <div id="refund" data-aos="fade-up"></div>
+                        <img id="refund-img" class="icon"/>
+                        <div id="refund" data-aos="fade-down"></div>
                     </div>
                 </div>
             </div>
@@ -64,12 +76,14 @@
 
     </main>
 
+    <div></div>
+
     <script>
         AOS.init({
-            delay: 900,
-            offset: 110
+            delay: 600,
+            offset: 2
         });
-      </script>
+    </script>
 
 </body>
 

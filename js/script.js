@@ -13,7 +13,7 @@ $(document).ready(() => {
         $('.trends').slideDown();
     });
 
-    $('#tabels').click(() => {
+    $('#tables').click(() => {
         $('.tables').slideDown();
         $('.trends').slideUp();
     });
@@ -73,9 +73,13 @@ view_values = (_id, data, details) => {
         if (e != 'details') {
             output += `<tr> <td> 
             <div class="mt-2"> <img class="icon" src="icons/${details[data[e].details].icon}"/> <br> 
-           <span class=""> ${details[data[e].details].label} </span>
-           </div>
-           </td> `;
+           <span class=""> ${details[data[e].details].label} </span>`;
+
+           if (details[data[e].details].unit != undefined) {
+               output+= `<br> <span class="label-3">(${details[data[e].details].unit})</span>`;
+           }
+
+           output+=`</div></td> `;
 
 
             for (v in data[e].values) {
@@ -111,12 +115,18 @@ view_values = (_id, data, details) => {
 
 view_trend = (_id, data, details) => {
     let label = details[data.details].label;
+    let icon = details[data.details].icon;
     let unit = details[data.details].unit;
+
+    if (unit != undefined) {
+        unit = `(${unit})`;
+    }
 
 
     $(_id).html('');
+    $(_id + '-img').attr('src', 'icons/' + icon);
 
-    var options = {
+    let options = {
         title: {
             text: label,
             align: 'center'
@@ -152,14 +162,14 @@ view_trend = (_id, data, details) => {
         yaxis: [
             {
                 title: {
-                    text: label,
+                    text: label + '  ' + unit,
                 },
             }
         ]
 
     };
 
-    var chart = new ApexCharts(document.querySelector(_id), options);
+    let chart = new ApexCharts(document.querySelector(_id), options);
     chart.render();
 
 
