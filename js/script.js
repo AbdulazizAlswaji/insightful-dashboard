@@ -8,6 +8,24 @@ $(document).ready(() => {
     view_trend('#sales', data.trends.sales, details, 'sales');
     view_trend('#refund', data.trends.refund, details, 'refund');
 
+    $('#all').click(() => {
+        $('.tables').slideDown();
+        $('.trends').slideDown();
+    });
+
+    $('#tabels').click(() => {
+        $('.tables').slideDown();
+        $('.trends').slideUp();
+    });
+
+    $('#trends').click(() => {
+        $('.tables').slideUp();
+        $('.trends').slideDown();
+    });
+
+
+
+
 });
 
 
@@ -94,13 +112,13 @@ view_values = (_id, data, details) => {
 view_trend = (_id, data, details) => {
     let label = details[data.details].label;
     let unit = details[data.details].unit;
-    
-    
+
+
     $(_id).html('');
 
     var options = {
         title: {
-            text: label ,
+            text: label,
             align: 'center'
         },
 
@@ -111,7 +129,7 @@ view_trend = (_id, data, details) => {
 
         chart: {
             toolbar: { show: false },
-            height: 280,
+            height: 340,
             type: 'area',
             foreColor: '#fff',
         },
@@ -130,7 +148,7 @@ view_trend = (_id, data, details) => {
         xaxis: {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
         },
-        
+
         yaxis: [
             {
                 title: {
