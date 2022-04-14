@@ -4,6 +4,7 @@ Coding informative dashboards from scratch for useful insights, and displaying c
 * jQuery 
 * AOS
 * Apexcharts
+
 And adding flavoure of animations.
 
 Tutorial (Youtube),
